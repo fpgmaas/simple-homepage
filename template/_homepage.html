@@ -5,44 +5,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    <title>{{settings.page_title}}</title>
 </head>
 
 <body>
-<div class = "center-container">
-    <div class = "image-container">
-        <img class = 'image' src = 'static/placeholder.png'>
-    </div>
-    <form action="https://www.google.com/search" id="search-form" class="searchform" method="get" name="searchform" target="_blank">
-        <input autocomplete="off" id="search-input" class="form-control search" name="q" placeholder="Looking for something?" required="required"  type="text" autofocus="autofocus">
-    </form>
-    <div class = 'links-container'>
-        <div class = 'links-group'>
-            <h2>Work</h2>
-            <ul class = 'links-list'>
-                <li><a href = 'https://google.com'>GitHub</a></li>
-                <li><a href = 'https://google.com'>Confluence</a></li>
-                <li><a href = 'https://google.com'>Jira</a></li>
-            </ul>
+    <div class="center-container">
+        <div class="image-container">
+            <img class='image' src='static/placeholder.png'>
+        </div>
+        <form action="https://www.google.com/search" id="search-form" class="searchform" method="get" name="searchform"
+            target="_blank">
+            <input autocomplete="off" id="search-input" class="form-control search" name="q"
+                placeholder="{{ settings.search_text | safe  }}" required="required" type="text" autofocus="autofocus">
+        </form>
+        <div class='links-container'>
+            {% for list_title, list_urls in settings.urls.items() %}
+            <div class='links-group'>
+                <h2>{{list_title}}</h2>
+                <ul class='links-list'>
+                    {% for url_title, url in list_urls.items() %}
+                    <li><a href="{{url}}">{{url_title}}</a></li>
+                    {% endfor %}
+                </ul>
             </div>
-            <div class = 'links-group'>
-            <h2>Social</h2>
-            <ul class = 'links-list'>
-                <li><a href = 'https://google.com'>LinkedIn</a></li>
-                <li><a href = 'https://google.com'>Twitter</a></li>
-            </ul>
-            </div>
-            <div class = 'links-group'>
-            <h2>Entertainment</h2>
-            <ul class = 'links-list'>
-                <li><a href = 'https://google.com'>Reddit</a></li>
-                <li><a href = 'https://google.com'>Youtube</a></li>
-                <li><a href = 'https://google.com'>NOS</a></li>
-                <li><a href = 'https://google.com'>Gmail</a></li>
-            </ul>
-            </div>
+            {% endfor %}
         </div>
     </div>
-</div>
 </body>
 
 </html>

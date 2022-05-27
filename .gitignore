@@ -1,5 +1,7 @@
 docs/source
 .vscode/
+public/
+settings.yaml
 
 # From https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore
 
