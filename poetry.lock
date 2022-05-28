@@ -455,7 +455,7 @@ numpy-style = ["docstring_parser (>=0.7)"]
 name = "pyyaml"
 version = "6.0"
 description = "YAML parser and emitter for Python"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -520,7 +520,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<3.11"
-content-hash = "2c4481645ae3b8d6958453d8687a14d12b8064e2fe1a032e345764b93299bc40"
+content-hash = "b4ac7766183701c22c32a9fbf0767adf2c7dccc3a2bf3c48cccec4889bb4387e"
 
 [metadata.files]
 astunparse = [

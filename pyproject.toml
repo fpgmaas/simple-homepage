@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "simple_homepage"
-version = "0.0.1"
+version = "0.0.3"
 description = "Create a simple homepage"
 authors = ["Florian Maas <ffpgmaas@gmail.com>"]
 repository = "https://github.com/fpgmaas/simple-homepage"
@@ -9,14 +9,12 @@ readme = "README.md"
 packages = [
   {include = "simple_homepage"}
 ]
-include = [
-  'template/',
-  '_settings.yaml',
-]
+include = ['simple_homepage/files/*']
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
 Jinja2 = "^3.1.2"
+PyYAML = "^6.0"
 
 
 [tool.poetry.dev-dependencies]
@@ -68,4 +66,4 @@ exclude = [
 ]
 
 [tool.poetry.scripts]
-homepage = "simple_homepage.cli:main"
+homepage = "simple_homepage.cli:CommandLineInterface"
