@@ -4,7 +4,9 @@ import os
 import argparse
 import sys
 from simple_homepage.homepage_generator import HomepageGenerator
+from simple_homepage.directory_builder import DirectoryBuilder
 
+import oyaml
 import logging
 
 logging.basicConfig(
@@ -38,14 +40,9 @@ class CommandLineInterface:
     def init(self):
         parser = argparse.ArgumentParser(
             description='Initialize the file structure for the homepage')
+        parser.add_argument('--dark', dest = 'dark', action='store_true', help='Initialize page in dark mode')
         args = parser.parse_args(sys.argv[2:])
-        try:
-            files_location = pkg_resources.resource_filename(__name__, "files")
-            shutil.copytree(files_location, os.getcwd(), dirs_exist_ok=True)
-        finally:
-            pkg_resources.cleanup_resources()
-        logging.info('Template files and settings.yaml created.')
-
+        DirectoryBuilder(dark = vars(args)['dark']).build()
 
     def build(self):
         parser = argparse.ArgumentParser(

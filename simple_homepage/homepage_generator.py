@@ -46,11 +46,19 @@ class HomepageGenerator:
             raise ValueError(f"Encountered an error while copying static files.")
 
     def _render_page(self):
-        template = self.env.get_template("_homepage.html")
+
         with open(self.settings_yaml, "rt") as f:
             settings = yaml.safe_load(f.read())
-        with open(f"{self.output_dir}/index.html", "w+") as file:
+
+        template = self.env.get_template("homepage.html")
+        with open(f"{self.output_dir}/homepage.html", "w+") as file:
             html = template.render(settings=settings)
             file.write(html)
+
+        template = self.env.get_template("static/stylesheet.css")
+        with open(f"{self.output_dir}/static/stylesheet.css", "w+") as file:
+            html = template.render(settings=settings)
+            file.write(html)
+
         logging.info('Page rendered.')
 
