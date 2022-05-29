@@ -1,9 +1,9 @@
 import json
 import logging
 import os
+import random
 import shutil
 from re import template
-import random
 
 import yaml
 from jinja2 import Environment, FileSystemLoader, Template
@@ -14,6 +14,7 @@ class HomepageGenerator:
     Class to generate a custom homepage from template files. The template files can be created
     with the `DirectoryBuilder` class.
     """
+
     def __init__(
         self, template_dir: str = "template", settings_yaml: "str" = "settings.yaml", output_dir: str = "public"
     ):
@@ -23,12 +24,19 @@ class HomepageGenerator:
         self.env = Environment(loader=FileSystemLoader(template_dir))
 
     def build(self):
+        self._verify_required_files_exist()
         self._clear_output_dir_if_exists()
         self._create_output_dir()
         self._copy_static_dir()
         self._render_page()
         self._add_images_list_to_js()
         logging.info(f"Page built. The resulting homepage can be found at {self.output_dir}/homepage.html")
+
+    def _verify_required_files_exist(self):
+        expected_files = [self.settings_yaml,f'{self.template_dir}/_homepage.html',f'{self.template_dir}/static/_stylesheet.css',f'{self.template_dir}/static/homepage.js']
+        files_found = [os.path.exists(file) for file in expected_files]
+        if not all(files_found):
+            raise ValueError('Not all required template files were found! Did you initialize the directory with `homepage init` first?')
 
     def _clear_output_dir_if_exists(self):
         if os.path.isdir(self.output_dir):
@@ -68,11 +76,10 @@ class HomepageGenerator:
             file.write(html)
 
     def _add_images_list_to_js(self):
-        images = [f'"static/images/{image}"' for image in os.listdir('public/static/images')]
+        images = [f'"static/images/{image}"' for image in os.listdir("public/static/images")]
 
-        with open('public/static/homepage.js', 'r+') as f:
+        with open("public/static/homepage.js", "r+") as f:
             content = f.read()
             f.seek(0, 0)
             line = f'var images = new Array({",".join(images)});'
-            f.write(line.rstrip('\r\n') + '\n' + content)
-
+            f.write(line.rstrip("\r\n") + "\n" + content)
