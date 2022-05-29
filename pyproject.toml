@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "simple_homepage"
-version = "0.0.4"
+version = "0.0.5"
 description = "Create a simple homepage"
 authors = ["Florian Maas <ffpgmaas@gmail.com>"]
 repository = "https://github.com/fpgmaas/simple-homepage"
