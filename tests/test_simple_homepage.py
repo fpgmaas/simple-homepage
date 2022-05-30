@@ -24,9 +24,13 @@ def test_init_command(tmp_path):
         print(
             f"files in /home/runner/work/simple-homepage/simple-homepage/simple_homepage/: {os.listdir('/home/runner/work/simple-homepage/simple-homepage/simple_homepage/')}"
         )
-        print(f"files in /home/runner/work/simple-homepage/simple-homepage/: {os.listdir('/home/runner/work/simple-homepage/simple-homepage/')}")
+        print(
+            f"files in /home/runner/work/simple-homepage/simple-homepage/: {os.listdir('/home/runner/work/simple-homepage/simple-homepage/')}"
+        )
         print(f"files in /home/runner/work/simple-homepage/: {os.listdir('/home/runner/work/simple-homepage')}")
-        print(f"files in /home/runner/work/simple-homepage/simple-homepage/.venv: {os.listdir('/home/runner/work/simple-homepage/simple-homepage/.venv')}")
+        print(
+            f"files in /home/runner/work/simple-homepage/simple-homepage/.venv: {os.listdir('/home/runner/work/simple-homepage/simple-homepage/.venv')}"
+        )
 
         subprocess.check_call(shlex.split("homepage init")) == 0
         expected_files = [
