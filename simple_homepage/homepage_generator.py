@@ -1,12 +1,9 @@
-import json
 import logging
 import os
-import random
 import shutil
-from re import template
 
 import yaml
-from jinja2 import Environment, FileSystemLoader, Template
+from jinja2 import Environment, FileSystemLoader
 
 
 class HomepageGenerator:
@@ -65,7 +62,7 @@ class HomepageGenerator:
             shutil.copytree(f"{self.template_dir}/static", f"{self.output_dir}/static")
         except Exception as e:
             logging.info(e)
-            raise ValueError(f"Encountered an error while copying static files.")
+            raise ValueError("Encountered an error while copying static files.")
 
     def _render_page(self) -> None:
 

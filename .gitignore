@@ -1,6 +1,6 @@
 docs/source
 .vscode/
-public/
+/public/
 settings.yaml
 template/
 sandbox

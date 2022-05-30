@@ -1,11 +1,6 @@
 import argparse
 import logging
-import os
-import shutil
 import sys
-
-import oyaml
-import pkg_resources
 
 from simple_homepage.directory_builder import DirectoryBuilder
 from simple_homepage.homepage_generator import HomepageGenerator
@@ -47,14 +42,14 @@ class CommandLineInterface:
             "--dark",
             dest="dark",
             action="store_true",
-            help="""Optional. By default the template is initialized in light mode. 
+            help="""Optional. By default the template is initialized in light mode.
             Add this flag to initialize the page in dark mode.""",
         )
         parser.add_argument(
             "--dir",
             dest="dir",
             type=str,
-            help="""Optional. Name of a directory (relative to the current directory) to create and place the templates in. 
+            help="""Optional. Name of a directory (relative to the current directory) to create and place the templates in.
             If not specified, the template files will be placed in the current directory. """,
         )
         parser.add_argument(
@@ -76,6 +71,7 @@ class CommandLineInterface:
             )
 
     def build(self) -> None:
-        parser = argparse.ArgumentParser(description="Build the homepage from template files and settings.yaml")
-        args = parser.parse_args(sys.argv[2:])
+        parser = argparse.ArgumentParser(
+            description="Build the homepage from template files and settings.yaml"
+        )  # noqa: F841
         HomepageGenerator().build()
