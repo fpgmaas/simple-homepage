@@ -1,0 +1,111 @@
+:root {
+    --background-color: {{settings.colors.background}};
+    --text-color: {{settings.colors.text}};
+    --placeholder-color: {{settings.colors.placeholder}};
+    --header-color: {{settings.colors.header}};
+    --accent-color: {{settings.colors.accent}};
+  }
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Pangolin', cursive;
+    color: var(--header-color);
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+}
+
+ 
+h2 {
+     font-size: 1.1rem;
+     margin: 0 0 .5rem 0;
+     letter-spacing: 2px;
+ }
+
+.center-container {
+    width: 90%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    width: 80%;
+    max-width: 350px;
+    margin-bottom: 3rem;
+}
+
+.image {
+width: 100%;
+border-radius: 50%;
+aspect-ratio: 1;
+object-fit: cover;
+}
+
+#search-form {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 2rem;
+}
+
+#search-input {
+    width: 100%;
+    border: 0;
+    font-size: .9rem;
+    border-bottom: 1px solid grey;
+    text-align: center;
+    font-family: 'Pangolin', cursive;
+    outline: none;
+    background-color: var(--background-color);
+}
+
+#search-input::placeholder {
+    color: var(--placeholder-color);
+}
+
+.links-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: top;
+    flex-wrap: wrap;
+}
+
+.links-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    flex: 1 1 0px;
+    margin: 1em;
+    max-width: 180px;
+}
+
+.links-list {
+    text-align: center;
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+
+.links-list a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: ease all .3s;
+}
+
+.links-list a:hover{
+    color: var(--accent-color);
+}
+
+.links-list li {
+    margin: 0.2rem 0;
+}

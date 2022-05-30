@@ -1,4 +1,9 @@
 docs/source
+.vscode/
+/public/
+/settings.yaml
+/template/
+sandbox
 
 # From https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore
 

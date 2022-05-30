@@ -6,3 +6,5 @@
 [![License](https://img.shields.io/github/license/fpgmaas/simple-homepage)](https://img.shields.io/github/license/fpgmaas/simple-homepage)
 
 Create a simple homepage
+
+[Link](/example/homepage.html)
