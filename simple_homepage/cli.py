@@ -64,7 +64,7 @@ class CommandLineInterface:
             DirectoryBuilder(
                 dark=dict_args["dark"], directory=dict_args["dir"], overwrite=dict_args["overwrite"]
             ).build()
-        except (FileExistsError, OSError) as e:
+        except (FileExistsError) as e:
             logging.info(e)
             logging.info(
                 "Run the command with the `--overwrite` flag to ignore these errors and overwrite existing files."
