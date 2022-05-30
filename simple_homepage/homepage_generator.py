@@ -2,7 +2,7 @@ import logging
 import os
 import shutil
 
-import yaml
+import yaml  # type: ignore
 from jinja2 import Environment, FileSystemLoader
 
 

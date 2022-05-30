@@ -2,9 +2,10 @@ import logging
 import os
 import shutil
 from pathlib import Path
+from typing import Union
 
-import oyaml
-import pkg_resources
+import oyaml  # type: ignore
+import pkg_resources  # type: ignore
 
 
 class DirectoryBuilder:
@@ -12,7 +13,7 @@ class DirectoryBuilder:
     Class to populate the directory with the template files required to build a custom homepage.
     """
 
-    def __init__(self, dark: bool = False, directory: str = None, overwrite: bool = False) -> None:
+    def __init__(self, dark: bool = False, directory: Union[str, None] = None, overwrite: bool = False) -> None:
         self.dark = dark
         self.directory = directory
         self.directory_path = Path(os.getcwd()) / directory if directory else Path(os.getcwd())
@@ -32,8 +33,8 @@ class DirectoryBuilder:
         logging.info("Template files and settings.yaml created.")
 
     def _create_directory(self) -> None:
-        if not os.path.exists(self.directory):
-            os.mkdir(self.directory)
+        if not os.path.exists(self.directory):  # type: ignore
+            os.mkdir(self.directory)  # type: ignore
         else:
             if not self.overwrite:
                 raise OSError(f"A folder '{self.directory}' already exists within the current directory!")
