@@ -1,0 +1,21 @@
+page_title: Flo's Homepage
+search_text: Hi Flo! Looking for something?
+colors: 
+  background: 'white'
+  text: '#555555'
+  header: '#111111'
+  placeholder: '#999999'
+  accent: 'orange'
+urls:
+  Personal:
+   Gmail: https://mail.google.com/
+   Calendar: https://calendar.google.com/
+  Productivity:
+    GitHub: https://github.com
+    StackOverflow: https://Stackoverflow.com
+    Google Cloud: https://cloud.google.com/
+  Entertainment:
+    Youtube: https://youtube.com
+    Reddit: https://reddit.com
+    Netflix: https://netflix.com
+

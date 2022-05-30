@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="static/stylesheet.css" media="screen" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    <link rel="icon" href="static/favicon.svg" type="image/svg+xml">
+    <script src="static/homepage.js"></script>
+    <title>{{settings.page_title}}</title>
+</head>
+
+<body>
+    <div class="center-container">
+        <div class="image-container">
+            <img class='image' id="center-image">
+        </div>
+        <form action="https://www.google.com/search" id="search-form" class="searchform" method="get" name="searchform"
+            target="_blank">
+            <input autocomplete="off" id="search-input" class="form-control search" name="q"
+                placeholder="{{ settings.search_text | safe  }}" required="required" type="text" autofocus="autofocus">
+        </form>
+        <div class='links-container'>
+            {% for list_title, list_urls in settings.urls.items() %}
+            <div class='links-group'>
+                <h2>{{list_title}}</h2>
+                <ul class='links-list'>
+                    {% for url_title, url in list_urls.items() %}
+                    <li><a href="{{url}}">{{url_title}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
