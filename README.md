@@ -8,11 +8,46 @@
 [![Imports with isort](https://img.shields.io/badge/%20imports-isort-%231674b1)](https://pycqa.github.io/isort/)
 [![License](https://img.shields.io/github/license/fpgmaas/simple-homepage)](https://img.shields.io/github/license/fpgmaas/simple-homepage)
 
-This repository helps you to create a simple static homepage for your browser.
+This repository helps you create a simple static homepage for your browser.
 
-- **Github repository**: <https://github.com/fpgmaas/simple-homepage/>
-- **Documentation** <https://fpgmaas.github.io/simple-homepage/>
+The documentation can be found [here](https://fpgmaas.github.io/simple-homepage/).
 
+### Light ([Link to demo](demo/light/homepage.html))
+
+
+<img src="static/screenshot-light.png" alt="Example light homepage" width="500"/>
+
+### Dark ([Link to demo](demo/dark/homepage.html))
+
+<img src="static/screenshot-dark.png" alt="Example dark homepage" width="500"/>
+
+## Quick start
+
+To get started, first install the package:
+
+```
+pip install homepage
+```
+
+Then, navigate to a directory in which you want to create your homepage, and run
+
+```
+homepage init
+```
+
+or, for the dark version of the homepage:
+
+```
+homepage init --dark
+```
+
+Then, modify `settings.yaml` to your liking, and run
+
+```
+homepage build
+```
+
+Your custom homepage is now available under `public/homepage.html`.
 
 
 ---

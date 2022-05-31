@@ -4,6 +4,7 @@ docs/source
 /settings.yaml
 /template/
 sandbox
+.DS_Store
 
 # From https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore
 

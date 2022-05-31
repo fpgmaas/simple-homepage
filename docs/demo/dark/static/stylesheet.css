@@ -1,8 +1,8 @@
 :root {
-    --background-color: white;
-    --text-color: #555555;
-    --placeholder-color: #999999;
-    --header-color: #111111;
+    --background-color: #26263C;
+    --text-color: #dedeee;
+    --placeholder-color: #dedeee;
+    --header-color: white;
     --accent-color: orange;
   }
 
@@ -52,8 +52,7 @@ object-fit: cover;
 #search-form {
     width: 100%;
     max-width: 350px;
-    margin-bottom: 1rem;
-
+    margin-bottom: 2rem;
 }
 
 #search-input {

@@ -5,6 +5,16 @@
 [![Commit activity](https://img.shields.io/github/commit-activity/m/fpgmaas/simple-homepage)](https://img.shields.io/github/commit-activity/m/fpgmaas/simple-homepage)
 [![License](https://img.shields.io/github/license/fpgmaas/simple-homepage)](https://img.shields.io/github/license/fpgmaas/simple-homepage)
 
-Create a simple homepage
 
-[Link](/example/homepage.html)
+`simple-homepage` is a command line utility that helps you create a simple static homepage for your browser. For instructions on creating your own homepage, please refer to the `Getting Started` section in the sidebar.
+
+### Light ([Link to demo](demo/light/homepage.html))
+
+
+<img src="static/screenshot-light.png" alt="Example light homepage" width="500"/>
+
+### Dark ([Link to demo](demo/dark/homepage.html))
+
+<img src="static/screenshot-dark.png" alt="Example dark homepage" width="500"/>
+
+---
