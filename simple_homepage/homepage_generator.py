@@ -60,6 +60,7 @@ class HomepageGenerator:
     def _copy_static_dir(self) -> None:
         try:
             shutil.copytree(f"{self.template_dir}/static", f"{self.output_dir}/static")
+            os.remove(f"{self.output_dir}/static/_stylesheet.css")
         except Exception as e:
             logging.info(e)
             raise ValueError("Encountered an error while copying static files.")

@@ -85,5 +85,3 @@ jobs:
         run: |
             source .venv/bin/activate
             mkdocs gh-deploy --force
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

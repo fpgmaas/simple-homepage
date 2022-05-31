@@ -6,8 +6,11 @@ site_author: Florian Maas
 
 nav:
   - Home: index.md
-  - Modules: modules.md
-  - Example: example/homepage.html
+  - Getting Started: getting_started.md
+  - Commands: commands.md
+  - Demo: 
+    - Light: demo/light/homepage.html
+    - Dark: demo/dark/homepage.html
 plugins:
   - search
   - mkdocstrings:

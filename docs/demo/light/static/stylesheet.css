@@ -1,9 +1,9 @@
 :root {
-    --background-color: {{settings.colors.background}};
-    --text-color: {{settings.colors.text}};
-    --placeholder-color: {{settings.colors.placeholder}};
-    --header-color: {{settings.colors.header}};
-    --accent-color: {{settings.colors.accent}};
+    --background-color: white;
+    --text-color: #555555;
+    --placeholder-color: #999999;
+    --header-color: #111111;
+    --accent-color: orange;
   }
 
 body {
@@ -64,7 +64,6 @@ object-fit: cover;
     font-family: 'Pangolin', cursive;
     outline: none;
     background-color: var(--background-color);
-    color: var(--text-color);
 }
 
 #search-input::placeholder {
