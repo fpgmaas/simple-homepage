@@ -67,4 +67,4 @@ exclude = [
 ]
 
 [tool.poetry.scripts]
-simple-homepage = "simple_homepage.cli:cli"
+homepage = "simple_homepage.cli:cli"
