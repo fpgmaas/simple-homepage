@@ -8,7 +8,7 @@
 [![Imports with isort](https://img.shields.io/badge/%20imports-isort-%231674b1)](https://pycqa.github.io/isort/)
 [![License](https://img.shields.io/github/license/fpgmaas/simple-homepage)](https://img.shields.io/github/license/fpgmaas/simple-homepage)
 
-This repository helps you create a simple static homepage for your browser.
+`simple-homepage` is a command line utility that helps you create a simple static homepage for your browser.
 
 The documentation can be found [here](https://fpgmaas.github.io/simple-homepage/).
 
