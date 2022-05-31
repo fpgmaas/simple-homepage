@@ -26,7 +26,7 @@ The documentation can be found [here](https://fpgmaas.github.io/simple-homepage/
 To get started, first install the package:
 
 ```
-pip install homepage
+pip install simple-homepage
 ```
 
 Then, navigate to a directory in which you want to create your homepage, and run
