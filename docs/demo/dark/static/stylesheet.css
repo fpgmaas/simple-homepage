@@ -64,6 +64,7 @@ object-fit: cover;
     font-family: 'Pangolin', cursive;
     outline: none;
     background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 #search-input::placeholder {

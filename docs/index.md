@@ -17,4 +17,8 @@
 
 <img src="static/screenshot-dark.png" alt="Example dark homepage" width="500"/>
 
+## Acknowledgements
+
+Inspiration for this project comes from [this](https://www.reddit.com/r/startpages/comments/hca1dj/simple_light_startpage/) post on Reddit by [/u/akauro](https://www.reddit.com/user/akauro/).
+
 ---

@@ -58,6 +58,10 @@ class HomepageGenerator:
             raise ValueError(f"Encountered an error while trying to create the '{self.output_dir}' directory")
 
     def _copy_static_dir(self) -> None:
+        """
+        Copy all files from the static folder in the template to the public folder, except _stylesheet.css,
+        since stylesheet.css will be built using Jinja2 in the _render_page method.
+        """
         try:
             shutil.copytree(f"{self.template_dir}/static", f"{self.output_dir}/static")
             os.remove(f"{self.output_dir}/static/_stylesheet.css")
@@ -66,6 +70,9 @@ class HomepageGenerator:
             raise ValueError("Encountered an error while copying static files.")
 
     def _render_page(self) -> None:
+        """
+        Render the Jinja2 templates _homepage.html and _stylesheet.css into homepage.html and stylesheet.css.
+        """
 
         with open(self.settings_yaml, "rt") as f:
             settings = yaml.safe_load(f.read())
