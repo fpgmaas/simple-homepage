@@ -13,10 +13,15 @@ class HomepageGenerator:
     """
 
     def __init__(
-        self, template_dir: str = "template", settings_yaml: "str" = "settings.yaml", output_dir: str = "public"
+        self,
+        template_dir: str = "template",
+        settings_yaml: "str" = "settings.yaml",
+        output_dir: str = "public",
+        output_file: str = "index.html",
     ) -> None:
         self.settings_yaml = settings_yaml
         self.output_dir = output_dir
+        self.output_file = output_file
         self.template_dir = template_dir
         self.env = Environment(loader=FileSystemLoader(template_dir))
 
@@ -27,7 +32,7 @@ class HomepageGenerator:
         self._copy_static_dir()
         self._render_page()
         self._add_images_list_to_js()
-        logging.info(f"Page built. The resulting homepage can be found at {self.output_dir}/homepage.html")
+        logging.info(f"Page built. The resulting homepage can be found at {self.output_dir}/{self.output_file}")
 
     def _verify_required_files_exist(self) -> None:
         expected_files = [
@@ -71,14 +76,14 @@ class HomepageGenerator:
 
     def _render_page(self) -> None:
         """
-        Render the Jinja2 templates _homepage.html and _stylesheet.css into homepage.html and stylesheet.css.
+        Render the Jinja2 templates _homepage.html and _stylesheet.css into self.output_file and stylesheet.css.
         """
 
         with open(self.settings_yaml, "rt") as f:
             settings = yaml.safe_load(f.read())
 
         template = self.env.get_template("_homepage.html")
-        with open(f"{self.output_dir}/homepage.html", "w+") as file:
+        with open(f"{self.output_dir}/{self.output_file}", "w+") as file:
             html = template.render(settings=settings)
             file.write(html)
 
@@ -92,9 +97,9 @@ class HomepageGenerator:
         Scan for any images and add this as a list to the homepage.js files, so JavaScript can randomly pick
         one to display when the page is opened.
         """
-        images = [f'"static/images/{image}"' for image in os.listdir("public/static/images")]
+        images = [f'"static/images/{image}"' for image in os.listdir(f"{self.output_dir}/static/images")]
 
-        with open("public/static/homepage.js", "r+") as f:
+        with open(f"{self.output_dir}/static/homepage.js", "r+") as f:
             content = f.read()
             f.seek(0, 0)
             line = f'var images = new Array({",".join(images)});'

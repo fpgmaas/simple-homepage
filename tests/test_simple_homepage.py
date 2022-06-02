@@ -66,3 +66,18 @@ def test_build_command(tmp_path):
         ]
         for file in expected_files:
             assert os.path.isfile(file)
+
+
+def test_build_command_arguments(tmp_path):
+    with run_within_dir(tmp_path):
+        subprocess.check_call(shlex.split("homepage init")) == 0
+        subprocess.check_call(shlex.split("homepage build --output-dir test --output-file test.html")) == 0
+        expected_files = [
+            "settings.yaml",
+            "test/test.html",
+            "test/static/stylesheet.css",
+            "test/static/homepage.js",
+            "test/static/images/placeholder.png",
+        ]
+        for file in expected_files:
+            assert os.path.isfile(file)
