@@ -85,9 +85,9 @@ class CommandLineInterface:
         parser.add_argument(
             "--output-file",
             dest="file",
-            default="index.html",
+            default="homepage.html",
             type=str,
-            help="""Optional. Name of the resulting html file. Defaults to index.html.""",
+            help="""Optional. Name of the resulting html file. Defaults to homepage.html.""",
         )
         args = parser.parse_args(sys.argv[2:])
         dict_args = vars(args)

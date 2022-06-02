@@ -59,7 +59,7 @@ def test_build_command(tmp_path):
         subprocess.check_call(shlex.split("homepage build")) == 0
         expected_files = [
             "settings.yaml",
-            "public/index.html",
+            "public/homepage.html",
             "public/static/stylesheet.css",
             "public/static/homepage.js",
             "public/static/images/placeholder.png",

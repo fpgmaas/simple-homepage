@@ -32,4 +32,4 @@ Build the custom homepage from template files and write the output to a director
 ### Arguments
 
 - `--output-dir <DIR>`: Optional. Name of a directory (relative to the current directory) to create and place the resulting page in. Defaults to `public`
-- `--output-file <FILE>`: Optional. Name of the resulting html file. Defaults to index.html.
+- `--output-file <FILE>`: Optional. Name of the resulting html file. Defaults to homepage.html.
