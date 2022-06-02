@@ -74,4 +74,21 @@ class CommandLineInterface:
         parser = argparse.ArgumentParser(
             description="Build the homepage from template files and settings.yaml"
         )  # noqa: F841
-        HomepageGenerator().build()
+        parser.add_argument(
+            "--output-dir",
+            dest="dir",
+            default="public",
+            type=str,
+            help="""Optional. Name of a directory (relative to the current directory) to create and place the resulting page in.
+            Defaults to `public`. """,
+        )
+        parser.add_argument(
+            "--output-file",
+            dest="file",
+            default="index.html",
+            type=str,
+            help="""Optional. Name of the resulting html file. Defaults to index.html.""",
+        )
+        args = parser.parse_args(sys.argv[2:])
+        dict_args = vars(args)
+        HomepageGenerator(output_dir=dict_args["dir"], output_file=dict_args["file"]).build()

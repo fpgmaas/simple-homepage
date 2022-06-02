@@ -28,3 +28,8 @@ If not specified, the template files will be placed in the current directory.
 ## `homepage build`
 
 Build the custom homepage from template files and write the output to a directory named `public`, so the resulting homepage is found in `public/homepage.html` This command should be run within the directory that contains the template files created with `homepage init`.
+
+### Arguments
+
+- `--output-dir <DIR>`: Optional. Name of a directory (relative to the current directory) to create and place the resulting page in. Defaults to `public`
+- `--output-file <FILE>`: Optional. Name of the resulting html file. Defaults to index.html.
