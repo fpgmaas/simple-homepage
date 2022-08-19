@@ -46,7 +46,7 @@ homepage build
 
 Your custom homepage is now available under `public/homepage.html`. 
 
-Tip: run `python3 -m http.server 8000 --directory public` to see your webpage in action on https://localhost:8000.
+Tip: run `python -m http.server 8000 --directory public` to see your webpage in action on https://localhost:8000.
 
 ## Acknowledgements
 
