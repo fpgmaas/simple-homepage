@@ -44,7 +44,9 @@ Then, modify `settings.yaml` to your liking, and run
 homepage build
 ```
 
-Your custom homepage is now available under `public/homepage.html`.
+Your custom homepage is now available under `public/homepage.html`. 
+
+Tip: run `python -m http.server 8000 --directory public` to see your webpage in action on https://localhost:8000.
 
 ## Acknowledgements
 
